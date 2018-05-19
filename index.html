@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <!-- <link rel="stylesheet" type="text/css" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css"/>
+    <script src="http://code.jquery.com/jquery-1.8.2.min.js"> </script>
+    <script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script> -->
+
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" href="themes/green.min.css" />
+	<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="index.js"></script>
+    <title></title>
+</head>
+<body>
+     <!--Home page-->
+     <div data-role="page" id="Home" data-theme='a'>
+            <div data-role="header">
+                <h1>Fantastic Dice Game</h1>
+            </div>
+            <div data-role="content">    
+                <p>Welcome to the Fantastic Dice Game!</p>        
+                <a href="#pickplayer" data-role="button" data-transition='flip'>Pick Player</a>
+            </div>
+    
+            <div data-role="footer">
+               <p>Copyright &copy; some student 2018</p>
+            </div>
+        </div>
+
+        <!--pickplayer page-->
+     <div data-role="page" id="pickplayer" data-theme='b'>
+        <div data-role="header">
+            <h1>Fantastic Dice Game</h1>
+        </div>
+        <div data-role="content">    
+            <div id="userlist">
+               <ul data-role = "listview" id = "playerul"></ul>
+            </div><br /><br /><br />
+            
+            <p>Pick a Player or create new account!</p> <br /><br />       
+            <a href="#CreatePage" data-role="button" data-transition='flip'>Create New Account</a>
+        </div>
+
+        <div data-role="footer">
+           <p>Copyright &copy; some student 2018</p>
+        </div>
+    </div>
+    
+
+    <!--Create Account page-->
+    <div data-role="page" id="CreatePage" data-theme='c'>
+
+        <div data-role="header">
+            <h1>Fantastic Dice Game</h1>
+        </div>
+
+        <div data-role="content">
+            <p>Please create an account</p>
+            <input type="text" id="firstName" value="" placeholder="Enter first name"/>
+            <input type="text" id="lastName" value="" placeholder="Enter last name"/>     
+            <input type="submit" value="Create Account" id="create"/>
+            <!--Pick Bet page   <a href="#PickBet" data-role="button" data-transition='pop'>Pick Your Bet Size</a>   -->
+        </div>
+
+        <div data-role="footer">
+           <p>Copyright &copy; some student 2018</p>
+        </div>
+    </div>
+    <!--Pick Bet page-->
+    <div data-role="page" id="PickBet">
+
+        <div data-role="header">
+            <h1>Fantastic Dice Game</h1>
+        </div>
+
+        <div data-role="content">
+            <p id="welcome">xxxxx</p>
+            <p>Pick your bet size, $1, $2, or $5 </p>
+            <!-- hidden    a place to stash the user ID -->
+            <p id="IDparmHere" hidden >changeMe</p>  
+
+            <input type="submit" value="Bet $1" id="bet1"/>
+            <input type="submit" value="Bet $2" id="bet2"/>
+            <input type="submit" value="Bet $5" id="bet5"/>
+        </div>
+
+        <div data-role="footer">
+            <p>Copyright &copy; some student 2018</p>
+        </div>
+    </div>
+    <!--Play Dice page-->
+    <div data-role="page" id="game">
+
+        <div data-role="header" data-theme='a'>
+            <h1>Fantastic Dice Game</h1>
+        </div>
+
+         <!-- game content -->    
+         <div data-role="content" data-theme='a'>
+            <img id="image1" src="./images/dice-1.jpg" alt="Dice Image" style="width:50px;height:50px;">
+            &nbsp;&nbsp;&nbsp;&nbsp;
+        
+            <img id="image2" src="./images/dice-6.jpg" alt="Dice Image" style="width:50px;height:50px;">
+            <br /><br />
+            <p>
+                Your balance is $<span id="balance">5</span><br />
+                Number of turns <span id="turnCount">0</span>
+            </p>
+            <br />
+            <p>
+                <span id="status"></span>
+            </p>
+            <button id="ButtonBet" type="button">"Bet Now" </button>
+            <br />
+           <button id="QuitGame" type="button">"Quit Game" </button>
+            <br />
+    </div>
+
+        <div data-role="footer" data-theme='a'>
+            <p>Copyright &copy; some student 2018</p>
+        </div>
+    </div>
+    <!--Win page-->
+    <div data-role="page" id="WinPage">
+
+        <div data-role="header">
+            <h1>Fantastic Dice Game</h1>                          
+        </div>
+
+        <div data-role="content">       
+            <p>Congratulations! You won!</p>    
+            <a href="#Home" data-role="button" data-transition='pop' >Play Again</a>
+        </div>
+
+        <div data-role="footer">
+           <p>Copyright &copy; some student 2018</p>
+        </div>
+    </div>
+    <!--Lose page-->
+    <div data-role="page" id="LosePage">
+        <div data-role="header">
+            <h1>Fantastic Dice Game</h1>
+        </div>
+        <div data-role="content">    
+            <p>Sorry! You lost!</p>        
+            <a href="#Home" data-role="button" data-transition='pop'>Play Again</a>
+        </div>
+
+        <div data-role="footer">
+           <p>Copyright &copy; some student 2018</p>
+        </div>
+    </div>
+  
+</body>
+</html>
